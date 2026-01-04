@@ -6,7 +6,123 @@
 
 A comprehensive **LLM behavioral evaluation framework** built with [Inspect AI](https://inspect.aisi.org.uk/) (UK AI Safety Institute) to systematically test **hallucination**, **refusal patterns**, **grounding behavior**, and **tool usage** across multiple language models.
 
-![Framework Overview](./framework_overview.svg)
+![Framework Overview](./framewor<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0c29"/>
+      <stop offset="50%" style="stop-color:#302b63"/>
+      <stop offset="100%" style="stop-color:#24243e"/>
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="cardGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b"/>
+      <stop offset="100%" style="stop-color:#38f9d7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="450" y="45" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="bold" filter="url(#glow)">🔬 GroundCheck: LLM Behavioral Evaluation</text>
+  <text x="450" y="75" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="14">Built with Inspect AI Framework</text>
+
+  <!-- Evaluation Types - 4 Cards -->
+  <g filter="url(#shadow)">
+    <!-- Card 1: Hallucination -->
+    <rect x="50" y="110" width="185" height="120" rx="15" fill="url(#cardGrad1)"/>
+    <text x="142" y="145" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🎯 Hallucination</text>
+    <text x="142" y="170" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">Full Context</text>
+    <text x="142" y="188" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">Partial Context</text>
+    <text x="142" y="206" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">No/Misleading Context</text>
+
+    <!-- Card 2: Tool Usage -->
+    <rect x="255" y="110" width="185" height="120" rx="15" fill="url(#cardGrad2)"/>
+    <text x="347" y="145" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🛠️ Tool Usage</text>
+    <text x="347" y="170" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">Calculator</text>
+    <text x="347" y="188" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">Policy Lookup</text>
+    <text x="347" y="206" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">Database Search</text>
+
+    <!-- Card 3: Prompt Sensitivity -->
+    <rect x="460" y="110" width="185" height="120" rx="15" fill="url(#cardGrad3)"/>
+    <text x="552" y="145" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="13" font-weight="bold">📝 Prompt Sensitivity</text>
+    <text x="552" y="170" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">STRICT vs WEAK</text>
+    <text x="552" y="188" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">Chain-of-Thought</text>
+    <text x="552" y="206" text-anchor="middle" fill="#e0e0e0" font-family="Arial, sans-serif" font-size="11">Moderate Balance</text>
+
+    <!-- Card 4: Failure Taxonomy -->
+    <rect x="665" y="110" width="185" height="120" rx="15" fill="url(#cardGrad4)"/>
+    <text x="757" y="145" text-anchor="middle" fill="#1a1a2e" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚠️ Failure Taxonomy</text>
+    <text x="757" y="170" text-anchor="middle" fill="#1a1a2e" font-family="Arial, sans-serif" font-size="11">Over/Under Refusal</text>
+    <text x="757" y="188" text-anchor="middle" fill="#1a1a2e" font-family="Arial, sans-serif" font-size="11">Entity Confusion</text>
+    <text x="757" y="206" text-anchor="middle" fill="#1a1a2e" font-family="Arial, sans-serif" font-size="11">Temporal Confusion</text>
+  </g>
+
+  <!-- Arrow down -->
+  <path d="M450 240 L450 270" stroke="#fff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <polygon points="450,280 445,270 455,270" fill="#fff"/>
+
+  <!-- Models Section -->
+  <g filter="url(#shadow)">
+    <rect x="150" y="290" width="600" height="80" rx="15" fill="#1e1e3f" stroke="#4a4a8a" stroke-width="2"/>
+    <text x="450" y="320" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">🤖 Models Evaluated</text>
+    <text x="200" y="350" text-anchor="middle" fill="#667eea" font-family="Arial, sans-serif" font-size="12">GPT-4</text>
+    <text x="300" y="350" text-anchor="middle" fill="#f093fb" font-family="Arial, sans-serif" font-size="12">o1</text>
+    <text x="400" y="350" text-anchor="middle" fill="#4facfe" font-family="Arial, sans-serif" font-size="12">GPT-4o-mini</text>
+    <text x="510" y="350" text-anchor="middle" fill="#43e97b" font-family="Arial, sans-serif" font-size="12">Claude 3</text>
+    <text x="620" y="350" text-anchor="middle" fill="#f5576c" font-family="Arial, sans-serif" font-size="12">Gemini 2.0</text>
+    <text x="700" y="350" text-anchor="middle" fill="#38f9d7" font-family="Arial, sans-serif" font-size="12">GPT-3.5</text>
+  </g>
+
+  <!-- Arrow down -->
+  <polygon points="450,390 445,380 455,380" fill="#fff"/>
+  <path d="M450 380 L450 410" stroke="#fff" stroke-width="2"/>
+
+  <!-- Key Results Section -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="420" width="250" height="100" rx="15" fill="#1e3a1e" stroke="#2ecc71" stroke-width="2"/>
+    <text x="175" y="450" text-anchor="middle" fill="#2ecc71" font-family="Arial, sans-serif" font-size="13" font-weight="bold">✅ STRICT Prompts</text>
+    <text x="175" y="475" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="20" font-weight="bold">95%</text>
+    <text x="175" y="500" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="11">Hallucination Reduction</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="325" y="420" width="250" height="100" rx="15" fill="#1e1e3f" stroke="#667eea" stroke-width="2"/>
+    <text x="450" y="450" text-anchor="middle" fill="#667eea" font-family="Arial, sans-serif" font-size="13" font-weight="bold">⚡ Best Performers</text>
+    <text x="450" y="475" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">o1 & GPT-4o-mini</text>
+    <text x="450" y="500" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="11">Excellent Constraint Following</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="600" y="420" width="250" height="100" rx="15" fill="#3a1e1e" stroke="#f5576c" stroke-width="2"/>
+    <text x="725" y="450" text-anchor="middle" fill="#f5576c" font-family="Arial, sans-serif" font-size="13" font-weight="bold">🔧 Tool Usage</text>
+    <text x="725" y="475" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">90%+ Single | 70% Multi</text>
+    <text x="725" y="500" text-anchor="middle" fill="#a0a0a0" font-family="Arial, sans-serif" font-size="11">Tool Selection Accuracy</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="565" text-anchor="middle" fill="#606060" font-family="Arial, sans-serif" font-size="12">Built with Inspect AI • UK AI Safety Institute Framework</text>
+  <text x="450" y="585" text-anchor="middle" fill="#505050" font-family="Arial, sans-serif" font-size="10">100+ curated test samples • Dual scoring system • Full reproducibility</text>
+</svg>![framework_overview](https://github.com/user-attachments/assets/cb184dac-617e-489f-a683-f52b3030f88e)
+k_overview.svg)
 
 ---
 
