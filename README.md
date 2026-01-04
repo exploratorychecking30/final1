@@ -144,28 +144,22 @@ inspect view
 
 ## Evaluation Types
 
-```mermaid
-mindmap
-  root((Behavioral<br/>Evaluation))
-    Hallucination
-      Full Context
-      Partial Context
-      No Context
-      Misleading Context
-    Tool Usage
-      Calculator
-      Policy Lookup
-      Database Search
-      Date Calculator
-    Prompt Sensitivity
-      STRICT
-      MODERATE
-      WEAK
-      COT
-    Failure Taxonomy
-      Over-Refusal
-      Under-Refusal
-      Entity Confusion
+```
+                        ┌─────────────────────────────────────┐
+                        │      Behavioral Evaluation          │
+                        └─────────────────────────────────────┘
+                                         │
+        ┌────────────────┬───────────────┼───────────────┬────────────────┐
+        ▼                ▼               ▼               ▼                ▼
+  ┌───────────┐   ┌───────────┐   ┌───────────┐   ┌───────────┐   ┌───────────┐
+  │Hallucin-  │   │Tool Usage │   │  Prompt   │   │  Failure  │   │Multi-Model│
+  │ation      │   │           │   │Sensitivity│   │ Taxonomy  │   │Comparison │
+  └───────────┘   └───────────┘   └───────────┘   └───────────┘   └───────────┘
+        │               │               │               │
+   Full Context    Calculator       STRICT        Over-Refusal
+   Partial Ctx     Policy Lookup    MODERATE      Under-Refusal
+   No Context      DB Search        WEAK          Entity Confusion
+   Misleading      Date Calc        COT           Temporal Confusion
 ```
 
 ### 1. Hallucination & Grounding Evaluation
@@ -235,22 +229,14 @@ Same task, same prompt, different models → pure behavioral comparison.
 
 ## Key Results
 
-```mermaid
-quadrantChart
-    title Model Evaluation Results
-    x-axis Low Constraint Following --> High Constraint Following
-    y-axis Low Tool Usage --> High Tool Usage
-    quadrant-1 Excellent Overall
-    quadrant-2 Good Tools, Needs Constraints
-    quadrant-3 Needs Improvement
-    quadrant-4 Good Constraints, Needs Tools
-    o1: [0.95, 0.90]
-    GPT-4o-mini: [0.92, 0.85]
-    Gemini: [0.80, 0.95]
-    GPT-3.5: [0.85, 0.75]
-    Claude-3: [0.82, 0.70]
-    GPT-4: [0.70, 0.80]
-```
+| Model | Constraint Following | Tool Usage | Overall |
+|-------|---------------------|------------|---------|
+| **o1** | ⭐⭐⭐⭐⭐ (95%) | ⭐⭐⭐⭐⭐ (90%) | Excellent |
+| **GPT-4o-mini** | ⭐⭐⭐⭐⭐ (92%) | ⭐⭐⭐⭐ (85%) | Excellent |
+| **Gemini 2.0** | ⭐⭐⭐⭐ (80%) | ⭐⭐⭐⭐⭐ (95%) | Strong |
+| **GPT-3.5** | ⭐⭐⭐⭐ (85%) | ⭐⭐⭐⭐ (75%) | Strong |
+| **Claude-3** | ⭐⭐⭐⭐ (82%) | ⭐⭐⭐ (70%) | Strong |
+| **GPT-4** | ⭐⭐⭐ (70%) | ⭐⭐⭐⭐ (80%) | Good |
 
 ### Model Performance Summary
 
