@@ -6,9 +6,7 @@
 
 A comprehensive **LLM behavioral evaluation framework** built with [Inspect AI](https://inspect.aisi.org.uk/) (UK AI Safety Institute) to systematically test **hallucination**, **refusal patterns**, **grounding behavior**, and **tool usage** across multiple language models.
 
-```
-📄 Dataset → 🔧 Solver → 🤖 Model → 📝 Output → ⚖️ Scorer → 📊 Log → 📈 Analysis
-```
+![Framework Overview](./framework_overview.svg)
 
 ---
 
