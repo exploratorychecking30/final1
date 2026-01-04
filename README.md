@@ -6,28 +6,8 @@
 
 A comprehensive **LLM behavioral evaluation framework** built with [Inspect AI](https://inspect.aisi.org.uk/) (UK AI Safety Institute) to systematically test **hallucination**, **refusal patterns**, **grounding behavior**, and **tool usage** across multiple language models.
 
-```mermaid
-flowchart LR
-    subgraph Input
-        A[📄 Dataset] --> B[🔧 Solver]
-    end
-
-    subgraph Execution
-        B --> C[🤖 Model]
-        C --> D[📝 Output]
-    end
-
-    subgraph Evaluation
-        D --> E[⚖️ Scorer]
-        E --> F[📊 Log]
-    end
-
-    F --> G[📈 Analysis]
-
-    style A fill:#e1f5fe
-    style C fill:#fff3e0
-    style E fill:#e8f5e9
-    style G fill:#fce4ec
+```
+📄 Dataset → 🔧 Solver → 🤖 Model → 📝 Output → ⚖️ Scorer → 📊 Log → 📈 Analysis
 ```
 
 ---
